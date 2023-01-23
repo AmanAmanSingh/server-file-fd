@@ -7,7 +7,4 @@ router.get('/loginpage', (req, res) => {
     })
 })
 
-
-
-
 module.exports = router;

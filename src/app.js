@@ -9,7 +9,6 @@ const loginRoute = require("../routes/login");
 
 app.use(express.json());
 
-
 dotenv.config();
 mongoose.set('strictQuery', false);
 

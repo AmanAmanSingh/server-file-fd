@@ -21,9 +21,10 @@ router.get("/user", (req, res) => {
 
 router.post("/uploadpost", async (req, res) => {
     const { author, location, description } = req.body;
-    const { image_file } = req.files;
+    const { image } = req.files;
+    // console.log(req.files)
     // console.log(path.join(__dirname + "/uplaods/"))
-    image_file.mv("./uploads/" + image_file.name, (err) => {
+    image.mv("./uploads/" + image.name, (err) => {
         if (err) {
             console.log(err)
         } else {
@@ -31,7 +32,7 @@ router.post("/uploadpost", async (req, res) => {
         }
     })
     const data = await instaPostData.create({
-        image_file: image_file.name,
+        image: image.name,
         author: author,
         location: location,
         description: description

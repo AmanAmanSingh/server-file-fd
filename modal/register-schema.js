@@ -30,4 +30,4 @@ const loginSchema = new mongoose.Schema({
 const register = mongoose.model("RegisterationData", registerSchema);
 const login = mongoose.model("login", registerSchema);
 
-module.exports = register;
+module.exports = { register, login }
